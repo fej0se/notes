@@ -5,17 +5,26 @@ import "./assets/App.css";
 import "./assets/index.css";
 
 export default class App extends Component {
-  criarNota(titulo, nota){
-    alert(titulo)
-    alert(nota)
-
+  constructor(){
+    super()
+    this.state ={
+      notas: []
+    }
+  };
+  criarNota(titulo, text){
+    const novaNota = {titulo, text};
+    const novoArrayNotas = [...this.state.notas,novaNota]
+    const novoEstado = {
+      notas:novoArrayNotas
+    }
+    this.setState(novoEstado)
   }
 
   render() {
     return (
       <section className="conteudo">
-        <CreateNotes criarNota={this.criarNota} />
-        <ListaDeNotas />
+        <CreateNotes criarNota={this.criarNota.bind(this)} />
+        <ListaDeNotas notas={this.state.notas}/>
       </section>
     );
   }
