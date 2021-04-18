@@ -6,19 +6,19 @@ import "./assets/index.css";
 
 export default class App extends Component {
   constructor(){
-    super()
+    super();
     this.state ={
       notas: []
-    }
+    };
   };
   criarNota(titulo, text){
     const novaNota = {titulo, text};
-    const novoArrayNotas = [...this.state.notas,novaNota]
+    const novoArrayNotas = [...this.state.notas,novaNota];
     const novoEstado = {
       notas:novoArrayNotas
-    }
+    };
     this.setState(novoEstado)
-  }
+  };
 
   render() {
     return (
