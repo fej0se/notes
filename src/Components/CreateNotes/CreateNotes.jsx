@@ -21,9 +21,9 @@ export default class CreateNotes extends Component {
     _criarNota(evento) {
         evento.preventDefault();
         evento.stopPropagation();
-        if (this.titulo == '') {
+        if (this.titulo === '') {
             alert('Ops, você esqueceu de digitar um titulo.')
-        } else if (this.nota == '') {
+        } else if (this.nota === '') {
             alert('Ops, você esqueceu de digitar uma nota.')
         } else {
             this.props.criarNota(this.titulo, this.nota);
